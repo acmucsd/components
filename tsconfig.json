@@ -22,7 +22,7 @@
     "allowUnreachableCode": false,
     "noFallthroughCasesInSwitch": true,
     "target": "es5",
-    "outDir": "out",
+    "outDir": "dist",
     "declaration": true,
     "sourceMap": true,
     "esModuleInterop": true,
@@ -31,10 +31,8 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
-    "noEmit": true,
     "isolatedModules": true,
     "incremental": true,
-    "baseUrl": ".",
     "paths": {
       "@/public/*": [
         "./public/*"
