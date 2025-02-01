@@ -45,9 +45,7 @@
     }
   },
   "include": [
-    "next-env.d.ts",
-    "stories/*.ts",
-    "stories/*.tsx"
+    "src"
   ],
   "exclude": [
     "node_modules"
