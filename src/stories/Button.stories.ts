@@ -28,12 +28,58 @@ export const Primary = {
   },
 };
 
+export const PrimaryDark = {
+  args: {
+    primary: true,
+    mode: 'dark',
+    label: 'Button'
+  }
+}
+export const PrimaryDanger = {
+  args: {
+    primary: true,
+    danger: true,
+    label: 'Danger'
+  }
+}
+export const PrimaryDangerDark = {
+  args: {
+    primary: true,
+    danger: true,
+    mode: 'dark',
+    label: 'Danger'
+  }
+}
+
 export const Secondary = {
   args: {
+    primary: false,
     label: 'Button',
   },
 };
 
+export const SecondaryDark = {
+  args: {
+    primary: false,
+    mode: 'dark',
+    label: 'Button',
+  },
+}
+export const SecondaryDanger = {
+  args: {
+    primary: false,
+    danger: 'true',
+    label: 'Button',
+  },
+}
+export const SecondaryDangerDark = {
+  args: {
+    primary: false,
+    danger: 'true',
+    mode: 'dark',
+    label: 'Button',
+  },
+}
 export const Large = {
   args: {
     size: 'large',
