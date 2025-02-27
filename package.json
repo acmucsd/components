@@ -1,6 +1,6 @@
 {
   "name": "@acmucsd/components",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Component library for ACMUCSD websites.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
