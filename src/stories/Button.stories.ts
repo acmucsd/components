@@ -32,24 +32,24 @@ export const PrimaryDark = {
   args: {
     primary: true,
     mode: 'dark',
-    label: 'Button'
-  }
-}
+    label: 'Button',
+  },
+};
 export const PrimaryDanger = {
   args: {
     primary: true,
     danger: true,
-    label: 'Danger'
-  }
-}
+    label: 'Danger',
+  },
+};
 export const PrimaryDangerDark = {
   args: {
     primary: true,
     danger: true,
     mode: 'dark',
-    label: 'Danger'
-  }
-}
+    label: 'Danger',
+  },
+};
 
 export const Secondary = {
   args: {
@@ -64,14 +64,14 @@ export const SecondaryDark = {
     mode: 'dark',
     label: 'Button',
   },
-}
+};
 export const SecondaryDanger = {
   args: {
     primary: false,
     danger: 'true',
     label: 'Button',
   },
-}
+};
 export const SecondaryDangerDark = {
   args: {
     primary: false,
@@ -79,7 +79,7 @@ export const SecondaryDangerDark = {
     mode: 'dark',
     label: 'Button',
   },
-}
+};
 export const Large = {
   args: {
     size: 'large',
