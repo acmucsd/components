@@ -1,0 +1,41 @@
+name: Auto Comment on PRs
+on:
+  pull_request:
+    types: [opened]
+jobs:
+  auto-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Necessary to access the full history and base branch
+      
+      - name: Check package.json version
+        id: version-check
+        run: |
+          # Extract the current version from the PR's package.json
+          CURRENT_VERSION=$(jq -r .version package.json)
+          echo "Current version: $CURRENT_VERSION"
+          
+          # Fetch the version from the base branch's package.json
+          BASE_VERSION=$(git show origin/${{ github.base_ref }}:package.json | jq -r .version)
+          echo "Base branch version: $BASE_VERSION"
+          
+          if [ "$CURRENT_VERSION" = "$BASE_VERSION" ]; then
+            echo "No version change detected."
+            echo "versionChanged=false" >> $GITHUB_OUTPUT
+          else
+            echo "Version change detected."
+            echo "versionChanged=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Auto Comment if version not changed
+        if: steps.version-check.outputs.versionChanged == 'false'
+        uses: wow-actions/auto-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          pullRequestOpened: |
+            Thanks for contributing!
+            It appears that you have not updated the version in package.json.
+            Please bump the version according to semantic versioning guidelines.
