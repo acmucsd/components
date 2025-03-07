@@ -38,4 +38,4 @@ jobs:
           pullRequestOpened: |
             Thanks for contributing!
             It appears that you have not updated the version in package.json.
-            Please bump the version according to semantic versioning guidelines.
+            Please update the version if you want this PR to automatically deploy.
