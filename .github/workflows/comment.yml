@@ -37,5 +37,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           pullRequestOpened: |
             Thanks for contributing!
-            It appears that you have not updated the version in package.json.
-            Please update the version if you want this PR to automatically deploy.
+            It looks like you haven't updated this package's version in package.json.
+            Please update the package version according to semantic versioning guidelines.
