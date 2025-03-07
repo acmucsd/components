@@ -1,0 +1,259 @@
+/* --------------------- */
+
+.storybook-button {
+  /* Basic button styles */
+  display: inline-block;
+  cursor: pointer;
+  border: 0;
+  border-radius: 3em;
+  font-weight: 600; /* Keeps text bold across all buttons */
+  letter-spacing: 0%; /* Ensures no unintended spacing differences */
+
+  font-family: 'DM Sans', sans-serif; /* Ensures all buttons use the same font */
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.storybook-button--mobile--small {
+  font-size: 14px;
+  width: 112;
+  height: 48;
+  line-height: 16px;
+
+  border-radius: 32px;
+  padding-top: 16px;
+  padding-right: 32px;
+  padding-bottom: 16px;
+  padding-left: 32px;
+}
+
+.storybook-button--desktop--small {
+  font-size: 16px;
+  line-height: 24px;
+  width: 118;
+  height: 56;
+
+  border-radius: 32px;
+  padding-top: 16px;
+  padding-right: 32px;
+  padding-bottom: 16px;
+  padding-left: 32px;
+}
+
+.storybook-button--mobile--medium {
+  font-size: 16.8px;
+  width: 153;
+  height: 54;
+  line-height: 22px;
+  border-radius: 48px;
+  padding-top: 16px;
+  padding-right: 48px;
+  padding-bottom: 16px;
+  padding-left: 48px;
+}
+
+.storybook-button--desktop--medium {
+  font-size: 19.2px;
+  width: 161;
+  height: 61;
+  line-height: 28.8px;
+
+  border-radius: 48px;
+  padding-top: 16px;
+  padding-right: 48px;
+  padding-bottom: 16px;
+  padding-left: 48px;
+}
+
+.storybook-button--mobile--large {
+  font-size: 20.16px;
+  width: 165;
+  height: 58;
+  line-height: 26px;
+  border-radius: 48px;
+  padding-top: 16px;
+  padding-right: 48px;
+  padding-bottom: 16px;
+  padding-left: 48px;
+}
+
+.storybook-button--desktop--large {
+  font-size: 23.04px;
+  width: 174;
+  height: 67;
+  line-height: 34.6px;
+  border-radius: 48px;
+  padding-top: 16px;
+  padding-right: 48px;
+  padding-bottom: 16px;
+  padding-left: 48px;
+}
+
+/* light mode */
+/* primary */
+.storybook-button--primary.storybook-button--light {
+  background-color: #0073e6;
+  color: #ffffff;
+  &:hover {
+    background-color: #005cb8;
+  }
+  &:focus-visible {
+    background-color: #0073e6;
+    outline: 6px solid #002e5c;
+  }
+  &:active {
+    background-color: #00458a;
+  }
+  &:disabled {
+    background-color: #57abff;
+    border: 4px solid #1f8fff;
+  }
+}
+
+/* secondary */
+.storybook-button--secondary.storybook-button--light {
+  background-color: #ffffff;
+  color: #000000;
+  border: 3px solid #000000;
+  &:hover {
+    background: var(--Buttons-CTA-Button-Secondary-secondary-hover, #d6d6d6);
+    border: 3px solid var(--Buttons-CTA-Button-Secondary-secondary-outline, #000000);
+  }
+  &:focus {
+    background: var(--Buttons-CTA-Button-Secondary-secondary-default, #ffffff);
+    border: 6px solid var(--Buttons-CTA-Button-Secondary-secondary-outline, #000000);
+  }
+  &:active {
+    background: var(--Buttons-CTA-Button-Secondary-secondary-active, #ababab);
+    border: 3px solid var(--Buttons-CTA-Button-Secondary-secondary-outline, #000000);
+  }
+  &:disabled {
+    background: var(--Buttons-CTA-Button-Secondary-secondary-default, #ffffff);
+    border: 5px solid var(--Buttons-CTA-Button-Secondary-secondary-disabled-outline, #979797);
+  }
+}
+/* danger */
+.storybook-button--danger.storybook-button--primary.storybook-button--light {
+  background: var(--Buttons-CTA-Button-Primary-Danger-primary-default, #c82333);
+  color: #ffffff;
+  &:hover {
+    background: var(--Buttons-CTA-Button-Primary-Danger-primary-hover, #a11c29);
+  }
+  &:focus {
+    background: var(--Buttons-CTA-Button-Primary-Danger-primary-default, #c82333);
+    border: 6px solid var(--Buttons-CTA-Button-Primary-Danger-primary-active-border, #4e0e14);
+  }
+  &:active {
+    background: var(--Buttons-CTA-Button-Primary-Danger-primary-active, #7a151f);
+  }
+  &:disabled {
+    background: var(--Buttons-CTA-Button-Primary-Danger-primary-disabled, #ec8e97);
+    border: 4px solid var(--Buttons-CTA-Button-Primary-Danger-primary-disabled-border, #e36370);
+  }
+}
+/* secondary danger */
+.storybook-button--danger.storybook-button--secondary.storybook-button--light {
+  background-color: #ffffff;
+  border: 3px solid var(--Buttons-CTA-Button-Secondary-Danger-secondary-outline, #c82333);
+  color: #c82333;
+  &:hover {
+    background: var(--Buttons-CTA-Button-Secondary-Danger-secondary-hover, #fbe9eb);
+    border: 3px solid var(--Buttons-CTA-Button-Secondary-Danger-secondary-outline, #c82333);
+  }
+  &:focus {
+    background: var(--Buttons-CTA-Button-Secondary-Danger-secondary-default, #ffffff);
+    border: 6px solid var(--Buttons-CTA-Button-Secondary-Danger-secondary-outline, #c82333);
+  }
+  &:active {
+    border: 3px solid var(--Buttons-CTA-Button-Secondary-Danger-secondary-outline, #c82333);
+    background: var(--Buttons-CTA-Button-Secondary-Danger-secondary-active, #f7cfd3);
+  }
+  &:disabled {
+    background: var(--Buttons-CTA-Button-Secondary-Danger-secondary-default, #ffffff);
+    border: 5px solid var(--Buttons-CTA-Button-Secondary-Danger-secondary-disabled-outline, #ec8e97);
+  }
+}
+
+/* dark mode */
+/* primary */
+.storybook-button--primary.storybook-button--dark {
+  background-color: #1f8fff;
+  color: #25262b;
+  &:hover {
+    background: var(--Buttons-CTA-Button-Primary-primary-hover, #57abff);
+  }
+  &:focus {
+    background: var(--Buttons-CTA-Button-Primary-primary-default, #1f8fff);
+    border: 6px solid var(--Buttons-CTA-Button-Primary-primary-active-border, #c7e3ff);
+  }
+  &:active {
+    background: var(--Buttons-CTA-Button-Primary-primary-active, #8fc7ff);
+  }
+  &:disabled {
+    background: var(--Buttons-CTA-Button-Primary-primary-disabled, #005cb8);
+    border: 4px solid var(--Buttons-CTA-Button-Primary-primary-disabled-border, #0073e6);
+  }
+}
+/* secondary */
+.storybook-button--secondary.storybook-button--dark {
+  background-color: #25262b;
+  color: #ffffff;
+  border: 3px solid var(--Buttons-CTA-Button-Secondary-secondary-outline, #ffffff);
+  &:hover {
+    background: var(--Buttons-CTA-Button-Secondary-secondary-hover, #42444d);
+    border: 3px solid var(--Buttons-CTA-Button-Secondary-secondary-outline, #ffffff);
+  }
+  &:focus {
+    background: var(--Buttons-CTA-Button-Secondary-secondary-default, #25262b);
+    border: 6px solid var(--Buttons-CTA-Button-Secondary-secondary-outline, #ffffff);
+  }
+  &:active {
+    background: var(--Buttons-CTA-Button-Secondary-secondary-active, #656876);
+    border: 3px solid var(--Buttons-CTA-Button-Secondary-secondary-outline, #ffffff);
+  }
+  &:disabled {
+    background: var(--Buttons-CTA-Button-Secondary-secondary-default, #25262b);
+    border: 5px solid var(--Buttons-CTA-Button-Secondary-secondary-disabled-outline, #797c8b);
+  }
+}
+/* danger */
+.storybook-button--danger.storybook-button--primary.storybook-button--dark {
+  background-color: #e36370;
+  color: #25262b;
+  &:hover {
+    background: var(--Buttons-CTA-Button-Primary-Danger-primary-hover, #ec8e97);
+  }
+  &:focus {
+    background: var(--Buttons-CTA-Button-Primary-Danger-primary-default, #e36370);
+    border: 6px solid var(--Buttons-CTA-Button-Primary-Danger-primary-active-border, #f7cfd3);
+  }
+  &:active {
+    background: var(--Buttons-CTA-Button-Primary-Danger-primary-active, #f3aab1);
+  }
+  &:disabled {
+    background: var(--Buttons-CTA-Button-Primary-Danger-primary-disabled, #a11c29);
+    border: 4px solid var(--Buttons-CTA-Button-Primary-Danger-primary-disabled-border, #c82333);
+  }
+}
+/* secondary danger */
+.storybook-button--danger.storybook-button--secondary.storybook-button--dark {
+  color: #e36370;
+  background-color: #25262b;
+  border: 3px solid var(--Buttons-CTA-Button-Secondary-Danger-secondary-outline, #e36370);
+  &:hover {
+    background: var(--Buttons-CTA-Button-Secondary-Danger-secondary-hover, #27070a);
+    border: 3px solid var(--Buttons-CTA-Button-Secondary-Danger-secondary-outline, #e36370);
+  }
+  &:focus {
+    background: var(--Buttons-CTA-Button-Secondary-Danger-secondary-default, #25262b);
+    border: 6px solid var(--Buttons-CTA-Button-Secondary-Danger-secondary-outline, #e36370);
+  }
+  &:active {
+    background: var(--Buttons-CTA-Button-Secondary-Danger-secondary-active, #4e0e14);
+    border: 3px solid var(--Buttons-CTA-Button-Secondary-Danger-secondary-outline, #e36370);
+  }
+  &:disabled {
+    background: var(--Buttons-CTA-Button-Secondary-Danger-secondary-default, #25262b);
+    border: 5px solid var(--Buttons-CTA-Button-Secondary-Danger-secondary-disabled-outline, #a11c29);
+  }
+}

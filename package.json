@@ -10,7 +10,9 @@
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "lint": "prettier --write ./src && next lint --fix",
+    "lint:check": "prettier --check ./src && next lint"
   },
   "repository": {
     "type": "git",
@@ -35,11 +37,16 @@
     "@storybook/react": "^8.5.0",
     "@storybook/test": "^8.5.0",
     "@types/react": "^19.0.8",
+    "eslint": "^9.21.0",
+    "eslint-config-next": "^15.2.0",
+    "eslint-config-prettier": "^10.0.2",
     "next": "^15.1.6",
+    "prettier": "^3.5.2",
     "react": "^19.0.0",
     "rollup": "^4.34.0",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.36.0",
+    "sass": "^1.85.1",
     "storybook": "^8.5.0",
     "typescript": "^5.7.3"
   }

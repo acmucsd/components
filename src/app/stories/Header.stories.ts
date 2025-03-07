@@ -2,7 +2,7 @@ import { fn } from '@storybook/test';
 
 import { Header } from '../components/header/Header';
 
-export default {
+const HeaderStories = {
   title: 'Example/Header',
   component: Header,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
@@ -17,6 +17,9 @@ export default {
     onCreateAccount: fn(),
   },
 };
+
+export default HeaderStories;
+
 export const LoggedIn = {
   args: {
     user: {
