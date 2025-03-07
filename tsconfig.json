@@ -30,7 +30,7 @@
     "allowJs": false,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "isolatedModules": true,
     "incremental": true,
     "paths": {
@@ -40,10 +40,17 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "noEmit": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
-    "src"
+    "src",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
