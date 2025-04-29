@@ -28,4 +28,4 @@ jobs:
         uses: rossjrw/pr-preview-action@v1
         with:
           source-dir: ./storybook-static/
-          preview-branch: github-pages
+          preview-branch: gh-pages
