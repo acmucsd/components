@@ -3,3 +3,4 @@ node_modules
 .next
 storybook-static
 dist
+package-lock.json
