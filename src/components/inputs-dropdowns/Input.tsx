@@ -1,21 +1,22 @@
 import React, { useState, useRef } from 'react';
 import './inputs.css'
 
-export interface InputProps {
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     theme?: 'light' | 'dark'; // Define theme prop
-    type?: 'primary' | 'danger';
-    size?: 'desktop' | 'mobile';
+    variant?: 'primary' | 'error';
+    inputSize?: 'desktop' | 'mobile';
     suggestions?: string[];
-    onChange?: (value: string) => void;
+    onValueChange?: (value: string) => void;
     
 }
 
 export const Input: React.FC<InputProps> = ({
     theme = "light",
-    type = 'primary',
-    size = 'desktop',
+    variant = 'primary',
+    inputSize = 'desktop',
     suggestions = [],
-    onChange
+    onValueChange,
+    ...rest
 }) => {
     const [value, setValue]= useState('');
     const inputRef = useRef<HTMLInputElement>(null);
@@ -26,30 +27,37 @@ export const Input: React.FC<InputProps> = ({
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newVal = e.target.value;
         setValue(newVal);
-        onChange?.(newVal);
+        onValueChange?.(newVal);
     };
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if ((e.key === 'ArrowRight' || e.key === 'Tab') && bestSuggestion) {
             e.preventDefault();
             setValue(bestSuggestion);
-            onChange?.(bestSuggestion);
+            onValueChange?.(bestSuggestion);
 
         }
     }
     return  (      
        
-    <div className={`inline-suggest-wrapper ${size}`}>
+    <div className={`inline-suggest-wrapper ${inputSize}`}>
         <input 
             ref={inputRef}
-            className={`input ${theme} ${type} ${size}`}
+            className={`input ${theme} ${variant} ${inputSize}`}
             value={value}
             onChange={handleChange}
             onKeyDown={handleKeyDown}
+            {...rest}
         />
         {value && bestSuggestion && (
         <div className={`inline-suggestion ${theme}`}>
           <span>{value}</span>
-          <span className="hint">{bestSuggestion.slice(value.length)}</span>
+          <span className="hint"
+                onClick={() => {
+                    setValue(bestSuggestion);
+                    onValueChange?.(bestSuggestion);
+                    inputRef.current?.focus(); // optional: put focus back in input
+                }}
+          >{bestSuggestion.slice(value.length)}</span>
         </div>
       )}
     </div>
