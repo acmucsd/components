@@ -1,0 +1,81 @@
+.dropdown-wrapper {
+    font-family: sans-serif;
+    width: 291px;
+    user-select: none;
+    position: relative;
+    overflow: visible;
+    /* padding: 10px 20px 10px 20px; */
+    
+    font-family: "DM Sans", sans-serif;
+  }
+  
+  /* Button part (closed or open) */
+  .dropdown-header {
+    width: 100%; 
+    padding: 10px 20px;
+    border-bottom: none;
+    font-size: 16px;
+    height: 67px;
+    border: 1px solid black;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+  }
+
+  .dropdown-wrapper.open .dropdown-header {
+    border-radius: 16px 16px 0 0;
+    /* border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0; */
+  }
+  
+  /* Arrow */
+  .arrow {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0px;
+  }
+  
+  /* Dropdown menu */
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0px 20px 10px 20px;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    border: 1px solid black;
+    /* border-top: none; */
+    border-radius: 0 0 12px 12px;
+    
+    z-index: 10;
+  }
+  
+  /* Divider between header and options
+  .dropdown-menu::before {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: black;
+    margin-bottom: 8px;
+  } */
+  
+  /* Each option */
+  .dropdown-item {
+    line-height: 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    padding: 4px 8px;
+    cursor: pointer;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f5f5f5;
+  }
