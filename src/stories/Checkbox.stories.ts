@@ -5,7 +5,6 @@ const meta: Meta<typeof Checkbox> = {
   title: 'Example/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
-  // Show changes in the "Actions" panel
   argTypes: {
     onChange: { action: 'changed' },
   },
@@ -13,10 +12,6 @@ const meta: Meta<typeof Checkbox> = {
 
 export default meta;
 type Story = StoryObj<typeof Checkbox>;
-
-// Below are a few example stories. You can add more to show 
-// hover, focus, or pressed states by using pseudo-states 
-// or custom decorators.
 
 export const EnabledUnselectedLight: Story = {
   args: {
