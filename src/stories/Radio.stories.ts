@@ -1,0 +1,118 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Radio } from '../components/radio/Radio';
+
+const meta: Meta<typeof Radio> = {
+  title: 'Example/Radio',
+  component: Radio,
+  tags: ['autodocs'],
+  argTypes: {
+    onChange: { action: 'changed' },
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof Radio>;
+
+export const EnabledUnselectedLight: Story = {
+  args: {
+    checked: false,
+    disabled: false,
+    mode: 'light',
+    label: 'Label',
+  },
+};
+
+export const EnabledSelectedLight: Story = {
+  args: {
+    checked: true,
+    disabled: false,
+    mode: 'light',
+    label: 'Label',
+  },
+};
+
+export const DisabledUnselectedLight: Story = {
+  args: {
+    checked: false,
+    disabled: true,
+    mode: 'light',
+    label: 'Label',
+  },
+};
+
+export const DisabledSelectedLight: Story = {
+  args: {
+    checked: true,
+    disabled: true,
+    mode: 'light',
+    label: 'Label',
+  },
+};
+
+export const EnabledUnselectedDark: Story = {
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+      values: [
+        { name: 'dark', value: '#25262B' }
+      ]
+    },
+  },
+  args: {
+    checked: false,
+    disabled: false,
+    mode: 'dark',
+    label: 'Label',
+  },
+};
+
+export const EnabledSelectedDark: Story = {
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+      values: [
+        { name: 'dark', value: '#25262B' }
+      ]
+    },
+  },
+  args: {
+    checked: true,
+    disabled: false,
+    mode: 'dark',
+    label: 'Label',
+  },
+};
+
+export const DisabledUnselectedDark: Story = {
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+      values: [
+        { name: 'dark', value: '#25262B' }
+      ]
+    },
+  },
+  args: {
+    checked: false,
+    disabled: true,
+    mode: 'dark',
+    label: 'Label',
+  },
+};
+
+export const DisabledSelectedDark: Story = {
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+      values: [
+        { name: 'dark', value: '#25262B' }
+      ]
+    },
+  },
+  args: {
+    checked: true,
+    disabled: true,
+    mode: 'dark',
+    label: 'Label',
+  },
+};

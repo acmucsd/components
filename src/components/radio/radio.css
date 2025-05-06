@@ -1,0 +1,149 @@
+.storybook-radio {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-family: 'DM Sans', sans-serif;
+  margin: 8px;
+}
+
+.storybook-radio input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #000000;
+  /* default (light mode) border color */
+  background-color: #ffffff;
+  /* default (light mode) background */
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+
+/* Label spacing */
+.storybook-radio__label {
+  margin-left: 8px;
+  font-size: 16px;
+}
+
+/* ——————————————————————
+     Light mode – Checked
+     —————————————————————— */
+.storybook-radio--light input[type="radio"]:checked {
+  border-color: #0073e6;
+  background-color: #0073e6;
+}
+
+.storybook-radio--light input[type="radio"]:checked::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.storybook-radio--light input[type="radio"]:checked:hover {
+  background-color: #005cb8;
+}
+
+.storybook-radio--light input[type="radio"]:checked:active {
+  background-color: #00458a;
+}
+
+.storybook-radio--light input[type="radio"]:checked:disabled {
+  background-color: #979797;
+}
+
+/* ——————————————————————
+     Light mode – Unchecked
+     —————————————————————— */
+.storybook-radio--light input[type="radio"] {
+  border-color: #000000;
+}
+
+.storybook-radio--light input[type="radio"]:hover {
+  border-color: #005cb8;
+}
+
+.storybook-radio--light input[type="radio"]:focus-visible {
+  outline: 2px solid #0073e6;
+}
+
+.storybook-radio--light input[type="radio"]:active {
+  border-color: #00458a;
+}
+
+.storybook-radio--light input[type="radio"]:disabled {
+  border-color: #979797;
+}
+
+/* ——————————————————————
+     Dark mode – Base color
+     —————————————————————— */
+.storybook-radio--dark {
+  color: #ffffff;
+}
+
+/* ——————————————————————
+     Dark mode – Checked
+     —————————————————————— */
+.storybook-radio--dark input[type="radio"]:checked {
+  border-color: #0073E6;
+  background-color: #0073E6;
+}
+
+.storybook-radio--dark input[type="radio"]:checked::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #25262B;
+}
+
+.storybook-radio--dark input[type="radio"]:checked:hover {
+  background-color: #57abff;
+}
+
+.storybook-radio--dark input[type="radio"]:checked:active {
+  background-color: #8fc7ff;
+}
+
+.storybook-radio--dark input[type="radio"]:checked:disabled {
+  background-color: #797c8b;
+}
+
+/* ——————————————————————
+     Dark mode – Unchecked
+     —————————————————————— */
+.storybook-radio--dark input[type="radio"] {
+  border-color: #ffffff;
+  background-color: transparent;
+}
+
+.storybook-radio--dark input[type="radio"]:hover {
+  border-color: #57abff;
+}
+
+.storybook-radio--dark input[type="radio"]:focus-visible {
+  outline: 2px solid #1f8fff;
+}
+
+.storybook-radio--dark input[type="radio"]:active {
+  border-color: #8fc7ff;
+}
+
+.storybook-radio--dark input[type="radio"]:disabled {
+  border-color: #797c8b;
+}
