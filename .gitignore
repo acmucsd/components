@@ -2,5 +2,5 @@ node_modules
 .cache
 .next
 storybook-static
-test
 dist
+package-lock.json
