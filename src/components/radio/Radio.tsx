@@ -4,7 +4,7 @@ import './radio.css';
 export interface RadioProps {
   name: string;
   value: string;
-  checked?: boolean;
+  defaultChecked?: boolean;
   disabled?: boolean;
   mode?: 'light' | 'dark';
   label?: string;
@@ -14,7 +14,7 @@ export interface RadioProps {
 export const Radio: FC<RadioProps> = ({
   name,
   value,
-  checked = false,
+  defaultChecked = false,
   disabled = false,
   mode = 'light',
   label,
@@ -28,7 +28,7 @@ export const Radio: FC<RadioProps> = ({
         type="radio"
         name={name}
         value={value}
-        defaultChecked={checked}
+        defaultChecked={defaultChecked}
         disabled={disabled}
         onChange={onChange}
       />

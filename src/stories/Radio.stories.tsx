@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Radio } from '../components/radio/Radio';
+import React from 'react';
+
+const DARK_BACKGROUND_COLOR = '#25262B';
 
 const meta: Meta<typeof Radio> = {
   title: 'Example/Radio',
@@ -8,14 +11,36 @@ const meta: Meta<typeof Radio> = {
   argTypes: {
     onChange: { action: 'changed' },
   },
+  args: {
+    name: 'example',
+    value: 'example',
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Radio>;
 
+export const MultipleRadioButtons: Story = {
+  args: {
+    disabled: false,
+    mode: 'light',
+    label: 'Label',
+    defaultChecked: false,
+  },
+  decorators: [
+    (Story, { args }) => (
+      <div style={{ backgroundColor: args.mode === 'dark' ? DARK_BACKGROUND_COLOR : undefined }}>
+        <Story args={{ ...args, value: args.value + '1' }} /> <br />
+        <Story args={{ ...args, value: args.value + '2' }} /> <br />
+        <Story args={{ ...args, value: args.value + '3' }} />
+      </div>
+    )
+  ],
+};
+
 export const EnabledUnselectedLight: Story = {
   args: {
-    checked: false,
+    defaultChecked: false,
     disabled: false,
     mode: 'light',
     label: 'Label',
@@ -24,7 +49,7 @@ export const EnabledUnselectedLight: Story = {
 
 export const EnabledSelectedLight: Story = {
   args: {
-    checked: true,
+    defaultChecked: true,
     disabled: false,
     mode: 'light',
     label: 'Label',
@@ -33,7 +58,7 @@ export const EnabledSelectedLight: Story = {
 
 export const DisabledUnselectedLight: Story = {
   args: {
-    checked: false,
+    defaultChecked: false,
     disabled: true,
     mode: 'light',
     label: 'Label',
@@ -42,7 +67,7 @@ export const DisabledUnselectedLight: Story = {
 
 export const DisabledSelectedLight: Story = {
   args: {
-    checked: true,
+    defaultChecked: true,
     disabled: true,
     mode: 'light',
     label: 'Label',
@@ -54,12 +79,12 @@ export const EnabledUnselectedDark: Story = {
     backgrounds: {
       default: 'dark',
       values: [
-        { name: 'dark', value: '#25262B' }
+        { name: 'dark', value: DARK_BACKGROUND_COLOR }
       ]
     },
   },
   args: {
-    checked: false,
+    defaultChecked: false,
     disabled: false,
     mode: 'dark',
     label: 'Label',
@@ -71,12 +96,12 @@ export const EnabledSelectedDark: Story = {
     backgrounds: {
       default: 'dark',
       values: [
-        { name: 'dark', value: '#25262B' }
+        { name: 'dark', value: DARK_BACKGROUND_COLOR }
       ]
     },
   },
   args: {
-    checked: true,
+    defaultChecked: true,
     disabled: false,
     mode: 'dark',
     label: 'Label',
@@ -88,12 +113,12 @@ export const DisabledUnselectedDark: Story = {
     backgrounds: {
       default: 'dark',
       values: [
-        { name: 'dark', value: '#25262B' }
+        { name: 'dark', value: DARK_BACKGROUND_COLOR }
       ]
     },
   },
   args: {
-    checked: false,
+    defaultChecked: false,
     disabled: true,
     mode: 'dark',
     label: 'Label',
@@ -105,12 +130,12 @@ export const DisabledSelectedDark: Story = {
     backgrounds: {
       default: 'dark',
       values: [
-        { name: 'dark', value: '#25262B' }
+        { name: 'dark', value: DARK_BACKGROUND_COLOR }
       ]
     },
   },
   args: {
-    checked: true,
+    defaultChecked: true,
     disabled: true,
     mode: 'dark',
     label: 'Label',

@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Checkbox } from '../components/checkbox/Checkbox';
+import React from 'react';
+
+const DARK_BACKGROUND_COLOR = '#25262B';
 
 const meta: Meta<typeof Checkbox> = {
   title: 'Example/Checkbox',
@@ -8,9 +11,17 @@ const meta: Meta<typeof Checkbox> = {
   argTypes: {
     onChange: { action: 'changed' },
   },
+  decorators: [
+    (Story, { args }) => (
+        <div style={{ backgroundColor: args.mode === 'dark' ? DARK_BACKGROUND_COLOR : undefined }}>
+          <Story />
+        </div>
+      )
+  ],
 };
 
 export default meta;
+
 type Story = StoryObj<typeof Checkbox>;
 
 export const EnabledUnselectedLight: Story = {
@@ -54,7 +65,7 @@ export const EnabledUnselectedDark: Story = {
     backgrounds: {
       default: 'dark',
       values: [
-        { name: 'dark', value: '#25262B' }
+        { name: 'dark', value: DARK_BACKGROUND_COLOR }
       ]
     },
   },
@@ -71,7 +82,7 @@ export const EnabledSelectedDark: Story = {
     backgrounds: {
       default: 'dark',
       values: [
-        { name: 'dark', value: '#25262B' }
+        { name: 'dark', value: DARK_BACKGROUND_COLOR }
       ]
     },
   },
@@ -88,7 +99,7 @@ export const DisabledUnselectedDark: Story = {
     backgrounds: {
       default: 'dark',
       values: [
-        { name: 'dark', value: '#25262B' }
+        { name: 'dark', value: DARK_BACKGROUND_COLOR }
       ]
     },
   },
@@ -105,7 +116,7 @@ export const DisabledSelectedDark: Story = {
     backgrounds: {
       default: 'dark',
       values: [
-        { name: 'dark', value: '#25262B' }
+        { name: 'dark', value: DARK_BACKGROUND_COLOR }
       ]
     },
   },
