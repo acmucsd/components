@@ -2,7 +2,7 @@ import { expect, userEvent, within } from '@storybook/test';
 
 import { Page } from '../components/page/Page';
 
-export default {
+const PageStories = {
   title: 'Example/Page',
   component: Page,
   parameters: {
@@ -10,6 +10,8 @@ export default {
     layout: 'fullscreen',
   },
 };
+
+export default PageStories;
 
 export const LoggedOut = {};
 

@@ -3,7 +3,7 @@ import { fn } from '@storybook/test';
 import { Button } from '../components/button/Button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-export default {
+const ButtonStories = {
   title: 'Example/Button',
   component: Button,
   parameters: {
@@ -20,6 +20,8 @@ export default {
   args: { onClick: fn() },
 };
 
+export default ButtonStories;
+
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary = {
   args: {
@@ -32,24 +34,24 @@ export const PrimaryDark = {
   args: {
     primary: true,
     mode: 'dark',
-    label: 'Button'
-  }
-}
+    label: 'Button',
+  },
+};
 export const PrimaryDanger = {
   args: {
     primary: true,
     danger: true,
-    label: 'Danger'
-  }
-}
+    label: 'Danger',
+  },
+};
 export const PrimaryDangerDark = {
   args: {
     primary: true,
     danger: true,
     mode: 'dark',
-    label: 'Danger'
-  }
-}
+    label: 'Danger',
+  },
+};
 
 export const Secondary = {
   args: {
@@ -64,14 +66,14 @@ export const SecondaryDark = {
     mode: 'dark',
     label: 'Button',
   },
-}
+};
 export const SecondaryDanger = {
   args: {
     primary: false,
     danger: 'true',
     label: 'Button',
   },
-}
+};
 export const SecondaryDangerDark = {
   args: {
     primary: false,
@@ -79,7 +81,7 @@ export const SecondaryDangerDark = {
     mode: 'dark',
     label: 'Button',
   },
-}
+};
 export const Large = {
   args: {
     size: 'large',
