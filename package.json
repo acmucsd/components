@@ -35,7 +35,7 @@
     "@storybook/react": "^8.5.0",
     "@storybook/test": "^8.5.0",
     "@types/react": "^19.0.8",
-    "next": "^15.1.6",
+    "next": "15.1.9",
     "react": "^19.0.0",
     "rollup": "^4.34.0",
     "rollup-plugin-postcss": "^4.0.2",
