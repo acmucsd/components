@@ -19,15 +19,18 @@
     outline: none;
 }
 
+.storybook-checkbox:has(input[type="checkbox"]:disabled),
+.storybook-checkbox input[type="checkbox"]:disabled {
+    cursor: auto;
+}
+
 /* Label spacing */
 .storybook-checkbox__label {
     margin-left: 8px;
     font-size: 16px;
 }
 
-/* ——————————————————————
-     Light mode – Checked
-     —————————————————————— */
+/* Light mode – Checked */
 .storybook-checkbox--light input[type="checkbox"]:checked {
     border-color: #0073e6;
     background-color: #0073e6;
@@ -56,9 +59,7 @@
     background-color: #979797;
 }
 
-/* ——————————————————————
-     Light mode – Unchecked
-     —————————————————————— */
+/* Light mode – Unchecked */
 .storybook-checkbox--light input[type="checkbox"] {
     border-color: #000000;
 }
@@ -79,16 +80,12 @@
     border-color: #979797;
 }
 
-/* ——————————————————————
-     Dark mode – Base color
-     —————————————————————— */
+/* Dark mode – Base color */
 .storybook-checkbox--dark {
     color: #ffffff;
 }
 
-/* ——————————————————————
-     Dark mode – Checked
-     —————————————————————— */
+/* Dark mode – Checked */
 .storybook-checkbox--dark input[type="checkbox"]:checked {
     border-color: #0073E6;
     background-color: #0073E6;
@@ -117,9 +114,7 @@
     background-color: #797c8b;
 }
 
-/* ——————————————————————
-     Dark mode – Unchecked
-     —————————————————————— */
+/* Dark mode – Unchecked */
 .storybook-checkbox--dark input[type="checkbox"] {
     border-color: #ffffff;
     background-color: transparent;

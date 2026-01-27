@@ -1,8 +1,9 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
+import { RadioGroupContext } from './RadioGroup';
 import './radio.css';
 
 export interface RadioProps {
-  name: string;
+  name?: string;
   value: string;
   defaultChecked?: boolean;
   disabled?: boolean;
@@ -12,15 +13,33 @@ export interface RadioProps {
 }
 
 export const Radio: FC<RadioProps> = ({
-  name,
+  name: nameProp = '',
   value,
   defaultChecked = false,
-  disabled = false,
-  mode = 'light',
+  disabled: disabledProp = false,
+  mode: modeProp = 'light',
   label,
-  onChange,
+  onChange: onChangeProp,
 }) => {
+  const context = useContext(RadioGroupContext);
+
+  // Use context values if available, otherwise fall back to props
+  const name = context?.name ?? nameProp;
+  const disabled = context?.disabled ?? disabledProp;
+  const mode = context?.mode ?? modeProp;
+
   const modeClass = mode === 'dark' ? 'storybook-radio--dark' : 'storybook-radio--light';
+
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (context) {
+      context.onChange(value);
+    }
+    onChangeProp?.(event);
+  };
+
+  const inputProps = context
+    ? { checked: context.value === value }
+    : { defaultChecked };
 
   return (
     <label className={['storybook-radio', modeClass].join(' ')}>
@@ -28,7 +47,7 @@ export const Radio: FC<RadioProps> = ({
         type="radio"
         name={name}
         value={value}
-        defaultChecked={defaultChecked}
+        {...inputProps}
         disabled={disabled}
         onChange={onChange}
       />

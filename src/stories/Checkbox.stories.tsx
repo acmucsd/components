@@ -13,10 +13,10 @@ const meta: Meta<typeof Checkbox> = {
   },
   decorators: [
     (Story, { args }) => (
-        <div style={{ backgroundColor: args.mode === 'dark' ? DARK_BACKGROUND_COLOR : undefined }}>
-          <Story />
-        </div>
-      )
+      <div style={{ backgroundColor: args.mode === 'dark' ? DARK_BACKGROUND_COLOR : undefined }}>
+        <Story />
+      </div>
+    )
   ],
 };
 

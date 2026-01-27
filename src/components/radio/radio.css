@@ -147,3 +147,17 @@
 .storybook-radio--dark input[type="radio"]:disabled {
   border-color: #797c8b;
 }
+
+/* ——————————————————————
+     RadioGroup
+     —————————————————————— */
+.storybook-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.storybook-radio-group--horizontal {
+  flex-direction: row;
+  gap: 16px;
+}
